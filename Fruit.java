@@ -1,5 +1,3 @@
-package ru.geekbrains.oop.lesson4.homework;
-
 public abstract class Fruit {
 
     private float weight;
