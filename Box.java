@@ -33,6 +33,13 @@ public class Box<T extends Fruit> {
 
     @Override
     public String toString() {
-        return String.format("Вес коробки %.2f", getBoxWeight());
+        String whatInsideList = new String();
+        if (fruits.size() == 0) {
+            whatInsideList = "пустота";
+        } else {
+            whatInsideList = (fruits.get(0).getClass().getName() == "Apple") ? "яблоки" : "апельсины";
+        }
+        return String.format("Вес коробки %.2f, внутри коробки %s", getBoxWeight(), whatInsideList);
+        // (this.getClass() == "Apple") ? "яблоки" : "апельсины");
     }
 }
