@@ -1,4 +1,3 @@
-package OOP_DZ_Seminar_4;
 
 public abstract class Fruit {
 
