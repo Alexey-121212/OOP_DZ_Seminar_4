@@ -14,7 +14,7 @@ public class Program {
         }
         System.out.println(AppleBox1);
         System.out.println(AppleBox2);
-        System.out.printf("Сравниваем коробки. Они равны? Ответ: %b", AppleBox1.compare(AppleBox2));
+        System.out.printf("Сравниваем коробки. Они равны? Ответ: %s", (AppleBox1.compare(AppleBox2)) ? "Да" : "Нет");
 
         System.out.println("\n");
 
@@ -22,7 +22,7 @@ public class Program {
         AppleBox2.moveFruitsToOtherBox(AppleBox1);
         System.out.println(AppleBox1);
         System.out.println(AppleBox2);
-        System.out.printf("Сравниваем коробки. Они равны? Ответ: %b", AppleBox1.compare(AppleBox2));
+        System.out.printf("Сравниваем коробки. Они равны? Ответ: %s", (AppleBox1.compare(AppleBox2)) ? "Да" : "Нет");
 
         System.out.println("\n");
 
@@ -31,20 +31,39 @@ public class Program {
         for (int i = 0; i < 55; i++) {
             AppleBox2.addFruit(new Apple());
         }
-        System.out.printf("Сравниваем коробки. Они равны? Ответ: %b", AppleBox1.compare(AppleBox2));
+        System.out.println(AppleBox1);
+        System.out.println(AppleBox2);
+        System.out.printf("Сравниваем коробки. Они равны? Ответ: %s", (AppleBox1.compare(AppleBox2)) ? "Да" : "Нет");
 
         System.out.println("\n");
 
         System.out.println("Создаем 1 коробку с апельсинами и кладем в нее 20 апельсинов");
 
         Box<Orange> OrangeBox = new Box<>();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 20; i++) {
             OrangeBox.addFruit(new Orange());
         }
         System.out.println(OrangeBox);
 
-        System.out.printf("Сравниваем коробку с апельсинами и коробку с Яблоками. Они равны? Ответ: %b",
-                AppleBox1.compare(OrangeBox));
+        System.out.printf(
+                "Сравниваем (по весу конечно) коробку с апельсинами и коробку с Яблоками. Они равны? Ответ: %s",
+                (AppleBox1.compare(OrangeBox)) ? "Да" : "Нет");
+
+        System.out.println("\n");
+
+        System.out.println("Добавляем в коробку с яблоками 5 яблок, а в коробку с апельсинами 20 апельсинов");
+        for (int i = 0; i < 5; i++) {
+            AppleBox1.addFruit(new Apple());
+        }
+        for (int i = 0; i < 20; i++) {
+            OrangeBox.addFruit(new Orange());
+        }
+        System.out.println(AppleBox1);
+        System.out.println(OrangeBox);
+
+        System.out.printf(
+                "Сравниваем (по весу конечно) коробку с апельсинами и коробку с Яблоками. Они равны? Ответ: %s",
+                (AppleBox1.compare(OrangeBox)) ? "Да" : "Нет");
     }
 
 }
