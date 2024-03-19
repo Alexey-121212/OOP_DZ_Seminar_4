@@ -1,11 +1,13 @@
 import java.util.ArrayList;
 
+import javax.swing.Box;
+
 public class Box<T extends Fruit> {
 
     private ArrayList<T> fruits;
 
     public Box() {
-        super();
+        this.fruits = new ArrayList<>();
     }
 
     private float getBoxWeight() {
@@ -31,4 +33,8 @@ public class Box<T extends Fruit> {
         fruits.clear();
     }
 
+    @Override
+    public String toString() {
+        return String.format("Вес коробки %.2f", getBoxWeight());
+    }
 }
