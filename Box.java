@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 
-import javax.swing.Box;
-
 public class Box<T extends Fruit> {
 
     private ArrayList<T> fruits;
@@ -22,7 +20,7 @@ public class Box<T extends Fruit> {
         fruits.add(fruit);
     }
 
-    public boolean compare(Box<T> box) {
+    public boolean compare(Box box) {
         return box.getBoxWeight() == this.getBoxWeight() ? true : false;
     }
 
